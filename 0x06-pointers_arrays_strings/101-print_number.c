@@ -1,13 +1,26 @@
 #include "main.h"
 
 /**
- * set_string - sets the value of a pointer to a char
- * @s: pointer to change
- * @to: string to change pointer to
- *
- * Return: void
- */
-void set_string(char **s, char *to)
+  * print_number - print numbers chars
+  * @n: integer params
+  * Return: 0
+ **/
+
+void print_number(int n)
 {
-	*s = to;
+unsigned int n1;
+
+n1 = n;
+
+if (n < 0)
+{
+_putchar('-');
+n1 = -n;
+}
+
+if (n1 / 10 != 0)
+{
+print_number(n1 / 10);
+}
+_putchar((n1 % 10) + '0');
 }
