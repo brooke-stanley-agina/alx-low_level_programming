@@ -1,7 +1,7 @@
-#include "main.h"
+#include "holberton.h"
 #include <stdlib.h>
 /**
-* _calloc - prints calloc;
+* string_nconcat - prints concatenate string;
 * @nmemb: input string.
 * @size: input string.
 * Return: Pointer.
