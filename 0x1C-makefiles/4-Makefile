@@ -1,25 +1,16 @@
 CC = gcc
-SRC = main.c holberton.c
-OBJ = $(SRC:.c=.o)
-NAME = holberton
+SRC = main.c school.c
+OBJ = $(SRC:%.c=%.o)
+NAME = school
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra -pedantic
-
-# builds your executable
+CFLAGS = -Wall _Werror -Wextra -pedantic
+%.o: %.c m.h
+	$(CC) ${CFLAGS) -c -o $@ $<
 all: $(OBJ)
-		$(CC) $(CFLAGS) $(SRC) -o $(NAME)
-
-# deletes all Emacs and Vim temporary files along with the executable
+	$(CC) $(OBJ) -o $(NAME)
 clean:
-		$(RM) *~ $(NAME)
-
-# deletes the object files
+	$(RM) *~ $(NAME)
 oclean:
-		$(RM) $(OBJ)
-
-# deletes the Emacs temporary files, the executable, and the object files
-fclean:
-		$(RM) *~ $(NAME) $(OBJ)
-
-# forces recompilation of all source files
+	$(RM) $(OBJ)
+fclean: clean oclean
 re: oclean all
